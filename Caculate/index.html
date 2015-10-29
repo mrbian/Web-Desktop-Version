@@ -2,9 +2,122 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>计算器</title>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <style type="text/css">
+        body{
+            background-color: #FFFFFF;
+        }
+        .panel-body{
+            background-color: #EEEEEE;
+        }
+        .margin-reset{
+            margin:0 0;
+        }
+        .margin-top-20{
+            margin-top:20px;
+        }
+    </style>
 </head>
 <body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6 col-xs-12">
+            <div class="panel-primary">
+                <div class="panel-heading text-center">
+                    计算器
+                </div>
+                <div class="panel-body">
+                    <div class="input-group">
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-console"></span></span>
+                        <input type="text" id="exp" class="form-control text-right"/>
+                    </div>
+                    <div class="row margin-top-20">
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">1</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">2</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">3</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">+</button>
+                        </div>
+                    </div>
+                    <div class="row margin-top-20">
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">4</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">5</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">6</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num" style="padding-left:9px;padding-right: 9px;">-</button>
+                        </div>
+                    </div>
+                    <div class="row margin-top-20">
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">7</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">8</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">9</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">*</button>
+                        </div>
+                    </div>
+                    <div class="row margin-top-20">
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">(</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">)</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary" id="cal">=</button>
+                        </div>
+                        <div class="col-md-3 col-xs-3">
+                            <button class="btn btn-primary num">/</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="./js/stack.js"></script>
+<script src="./js/main.js"></script>
+<script type="text/javascript">
 
+    $('.num').click(function () {
+        $this = $(this);
+        var content = $('#exp').attr('value');
+        if(content){
+            content = content + $this.text();
+        }else{
+            content = $this.text();
+        }
+        $('#exp').attr('value', content);
+    });
+
+    $('#cal').click(function(){
+        var exp = $('#exp').attr('value');
+        console.log(exp);
+        $('#exp').attr('value',caculate(translate(exp)));
+    });
+
+</script>
 </body>
 </html>

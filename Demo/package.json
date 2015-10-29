@@ -1,0 +1,26 @@
+{
+  "name": "nw-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "dependencies": {
+    "bootstrap": "^3.3.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/mrbian/DeskTop-js.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "window": {
+    "toolbar": true, // ¹¤¾ßÀ¸
+    "frame": true, // ¿ò¼Ü
+    "width": 430,
+    "height": 450,
+    "resizable": false
+  }
+}
