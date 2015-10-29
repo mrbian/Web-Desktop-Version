@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TextEditor</title>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="node_modules/wangEditor/dist/css/wangEditor-1.3.12.css"/>
+    <style type="text/css">
+        body:{
+            background-color: #EEEEEE;
+        }
+        .margin-top-20{
+            margin-top:20px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row margin-top-20">
+        <div class="col-md-1 hidden-xs"></div>
+        <div class="col-md-10 col-xs-12">
+            <div class="panel panel-primary">
+                <div class="panel-heading text-center">
+                    文本查找
+                </div>
+                <div class="panel-body" style="background-color: #EEEEEE">
+                    <div class="input-group">
+                        <span class="input-group-btn">
+                            <button id="search" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <input type="text" id="model" class="form-control input-lg"/>
+                    </div>
+                    <div class="row margin-top-20">
+                        <textarea name="" id="textarea1" rows="20" class=""></textarea>
+                    </div>
+                    <div class="row margin-top-20">
+                        <div class="input-group">
+                            <span class="input-group-addon">结果:</span>
+                            <input type="text" id="result" class="form-control input-lg" readonly/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-1 hidden-xs"></div>
+</div>
+<script src="node_modules/wangEditor/dist/js/jquery-1.10.2.min.js"></script>
+<script src="node_modules/wangEditor/dist/js/wangEditor-1.3.12.min.js"></script>
+<script type="text/javascript">
+    _$ = jQuery.noConflict(true);
+</script>
+<script type="text/javascript">
+    _$(function(){
+        _$('#textarea1').wangEditor();
+    });
+</script>
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+<script src="js/main.js"></script>
+<script type="text/javascript">
+    $('#search').click(function(){
+        console.log($('#textarea1').val());  //为什么计算器那个就可以attr获得value的值,这个必须val()才行..貌似必须通过变量赋值用attr
+        console.log($('#model').val());
+       if(NaiveStrMatching($('#textarea1').val(),$('#model').val())){
+           $('#result').attr('value','找到字符串');
+       }else{
+           $('#result').attr('value','没有找到');
+       }
+    });
+</script>
+</body>
+</html>

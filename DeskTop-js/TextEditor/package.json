@@ -1,0 +1,17 @@
+{
+  "name": "texteditor",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "bootstrap": "^3.3.5",
+    "wangEditor": "^1.3.12"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
