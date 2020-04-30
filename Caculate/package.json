@@ -5,7 +5,7 @@
   "main": "index.html",
   "dependencies": {
     "bootstrap": "^3.3.5",
-    "jquery": "^2.1.4"
+    "jquery": "^3.5.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -14,8 +14,8 @@
   "author": "",
   "license": "ISC",
   "window": {
-    "toolbar": false, // ¹¤¾ßÀ¸
-    "frame": true, // ¿ò¼Ü
+    "toolbar": false, // Â¹Â¤Â¾ÃŸÃ€Â¸
+    "frame": true, // Â¿Ã²Â¼Ãœ
     "width": 430,
     "height": 450,
     "resizable": false
